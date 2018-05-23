@@ -1,0 +1,6 @@
+---
+applications:
+- name: cf-python-appdynamics
+  memory: 500M
+  command: gunicorn -c config.py cf-app:app
+  buildpack: https://github.com/cloudfoundry/python-buildpack.git#develop

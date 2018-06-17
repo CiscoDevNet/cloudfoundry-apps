@@ -38,7 +38,7 @@ pavan.krishna@OSXLTPKrishna:~/pcf-dash-generator$ cf services
 Getting services in org appdynamics-org / space dev as admin...
 
 name      service       plan            bound apps              last operation
-appd443   appdynamics   443Controller   cf-python-appdynamics   create succeeded
+appd443   appdynamics   443Controller                          create succeeded
 ```
 
 

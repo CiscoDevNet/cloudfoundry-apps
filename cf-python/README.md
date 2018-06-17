@@ -70,4 +70,4 @@ applications:
 pavan.krishna@OSXLTPKrishna:~/pcf-dash-generator$ cf push 
 ```
 
-Once it is pushed, you can generate the traffic and you will notice the applicatio getting instrumented on Appdynamics Controller.  
+Once it is pushed, you can generate the traffic and you will notice the application getting instrumented on Appdynamics Controller.  

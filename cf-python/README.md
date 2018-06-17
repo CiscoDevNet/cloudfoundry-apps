@@ -51,7 +51,7 @@ Just add
     - appd443
 ```
 
-so `mainfest.yml` will look like
+so `manifest.yml` will look like
 
 ```
 ---

@@ -33,6 +33,15 @@ OK
 
 Note that if we already have an instance for the plan of our choice, we donot have to create another one, we can reuse the same instance across multiple applications. 
 
+```
+pavan.krishna@OSXLTPKrishna:~/appdy/pcf-dash-generator (retry_with_backoff)$ cf services
+Getting services in org appdynamics-org / space dev as admin...
+
+name      service       plan            bound apps              last operation
+appd443   appdynamics   443Controller   cf-python-appdynamics   create succeeded
+```
+
+
 
 - Edit manifest.yml to include the service instance we created so that the application binds to the instance. 
 Just add

@@ -1,0 +1,12 @@
+C:\Users\ktweaver\appdy\pcf\hwc pcf\NET-sample-app\ViewEnvironment\bin\ViewEnvironment.dll.config
+C:\Users\ktweaver\appdy\pcf\hwc pcf\NET-sample-app\ViewEnvironment\bin\ViewEnvironment.dll
+C:\Users\ktweaver\appdy\pcf\hwc pcf\NET-sample-app\ViewEnvironment\bin\ViewEnvironment.pdb
+C:\Users\ktweaver\appdy\pcf\hwc pcf\NET-sample-app\ViewEnvironment\obj\Debug\ViewEnvironment.csproj.CoreCompileInputs.cache
+C:\Users\ktweaver\appdy\pcf\hwc pcf\NET-sample-app\ViewEnvironment\obj\Debug\ViewEnvironment.dll
+C:\Users\ktweaver\appdy\pcf\hwc pcf\NET-sample-app\ViewEnvironment\obj\Debug\ViewEnvironment.pdb
+C:\Users\ktweaver\appdy\pcf\hwc pcf\NET-sample-app\ViewEnvironment\obj\Debug\ViewEnvironment.csprojResolveAssemblyReference.cache
+C:\Users\ktweaver\appdy\pcf\hwc pcf\NET-sample-app\ViewEnvironment\bin\System.Net.Http.dll
+C:\Users\ktweaver\appdy\pcf\hwc pcf\NET-sample-app\ViewEnvironment\bin\System.Security.Cryptography.Algorithms.dll
+C:\Users\ktweaver\appdy\pcf\hwc pcf\NET-sample-app\ViewEnvironment\bin\System.Security.Cryptography.Encoding.dll
+C:\Users\ktweaver\appdy\pcf\hwc pcf\NET-sample-app\ViewEnvironment\bin\System.Security.Cryptography.Primitives.dll
+C:\Users\ktweaver\appdy\pcf\hwc pcf\NET-sample-app\ViewEnvironment\bin\System.Security.Cryptography.X509Certificates.dll

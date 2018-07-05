@@ -1,0 +1,4 @@
+URL=spring-music-brash-puku.cfapps.pie-20.cfplatformeng.com
+http://$URL/
+http://$URL/service
+http://$URL/appinfo

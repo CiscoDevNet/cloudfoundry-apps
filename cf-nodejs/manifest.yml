@@ -1,0 +1,6 @@
+---
+applications:
+- name: appd-node-demo
+  memory: 500M
+  services:
+    - appd45

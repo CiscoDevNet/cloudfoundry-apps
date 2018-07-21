@@ -70,6 +70,17 @@ applications:
 require('appdynamics').profile({});
 ```
 
+- Add appdynamics package in the list of dependencies specified in your package.json
+
+```
+  ....
+  "dependencies": {
+    "express": "~4.15.2",
+    "logfmt": "~1.2.0",
+    "appdynamics": "latest"
+  },
+  ...
+```
 
 - Push the application using `cf push`
 

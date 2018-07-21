@@ -1,0 +1,3 @@
+URL=http://appd-node-demo.cfapps.pie-20.cfplatformeng.com
+$(URL)/
+$(URL)/config

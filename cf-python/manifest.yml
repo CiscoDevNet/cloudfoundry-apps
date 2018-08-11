@@ -4,4 +4,4 @@ applications:
   memory: 500M
   buildpack: https://github.com/cloudfoundry/python-buildpack.git#develop
   services:
-    - appd443
+    - sonic

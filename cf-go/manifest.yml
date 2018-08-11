@@ -5,5 +5,8 @@ applications:
     env:
       GOVERSION: go1.8
       LD_LIBRARY_PATH: /app/vendor/appdynamics/lib
+    services:
+      - appdService      
 
+      
 

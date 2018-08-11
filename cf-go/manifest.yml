@@ -1,0 +1,9 @@
+---
+applications:
+  - name: cf-go
+    buildpack: https://github.com/cloudfoundry/go-buildpack.git
+    env:
+      GOVERSION: go1.8
+      LD_LIBRARY_PATH: /app/vendor/appdynamics/lib
+
+

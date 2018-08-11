@@ -3,6 +3,8 @@ package main
 import (
     "fmt"
     "time"
+    "strconv"
+    "os"
     "net/http"
     "math/rand"
     appd "appdynamics"
@@ -18,23 +20,22 @@ func helloWorld(w http.ResponseWriter, r *http.Request){
 func main() {
     cfg := appd.Config{}
 
-    cfg.AppName = os.Getenv("APPD_")
-    cfg.TierName = "cf-go-tier"
-    cfg.NodeName = "cf-go-node"
-    cfg.Controller.Host = "master-onprem-controller.e2e.appd-test.com"
-    cfg.Controller.Port = 8090
-    cfg.Controller.Account = "customer1"
-    cfg.Controller.AccessKey = "76d63d49-8e86-42af-91b1-54fbbbd607c2"
-    cfg.UseConfigFromEnv = false
+    cfg.AppName = os.Getenv("APPD_APPLICATION_NAME")
+    cfg.TierName = os.Getenv("APPD_TIER_NAME")
+    cfg.NodeName = os.Getenv("APPD_NODE_NAME")
+    port, err := strconv.ParseInt(os.Getenv("APPD_CONTROLLER_PORT"), 10, 16)
+    if err != nil {
+       port = 8080
+    }
+    cfg.Controller.Host = os.Getenv("APPD_CONTROLLER_HOST")
+    cfg.Controller.Port = uint16(port)
+    cfg.Controller.Account = os.Getenv("APPD_ACCOUNT_NAME")
+    cfg.Controller.AccessKey = os.Getenv("APPD_ACCOUNT_ACCESS_KEY")
     cfg.InitTimeoutMs = 1000
 
-    err := appd.InitSDK(&cfg)
+    err = appd.InitSDK(&cfg)
     if err != nil {
-        // For the sample, we exit when the SDK doesn't initialize. However, it's
-        // perfectly safe to continue your program even when the SDK fails to
-        // initialize.
         fmt.Println(err)
-        return
     }
 
     http.HandleFunc("/", helloWorld)

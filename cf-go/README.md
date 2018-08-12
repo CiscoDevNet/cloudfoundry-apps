@@ -12,7 +12,7 @@ Application
 ================================================================================
 - Copy the golang SDK into a location where golang can detect the libraries.
 - If you are using a `native-vendoring/glide/godep`, copy the correct
-[appdynamics go SDK](https://download.appdynamics.com/download/#version=&apm=golang-sdk) for the platform you are using.
+[appdynamics go SDK](https://download.appdynamics.com/download/#version=&apm=golang-sdk) for the platform you are using into `vendor` directory of your application
 
 
 To Use

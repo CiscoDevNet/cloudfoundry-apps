@@ -1,1 +1,10 @@
-
+---
+applications:
+- name: appdynamics-machine-agent
+  memory: 1G
+  health-check-type: process
+  no-route: true
+  buildpack: java_buildpack_offline
+  path: MachineAgent.zip
+  env:
+    JAVA_OPTS: '-Dappdynamics.agent.accountAccessKey={} -Dappdynamics.agent.accountName={} -Dappdynamics.controller.hostName={} -Dappdynamics.controller.port={} -Dappdynamics.agent.applicationName={} -Dappdynamics.agent.tierName={} -Dappdynamics.agent.nodeName={} -Dappdynamics.controller.ssl.enabled={true|false}'

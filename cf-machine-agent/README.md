@@ -2,14 +2,14 @@
 
 ## Pre-Requisites
 
-- CF access.
-- Download Access to Machine Agent https://download.appdynamics.com/download/#version=&apm=machine&os=linux
+- cf access.
+- Download [Machine Agent] (https://download.appdynamics.com/download/#version=&apm=machine&os=linux)
 
 
 ## Steps
 
 
-- Downlaod StandAlone Machine agent from [AppDynamics Download](https://download.appdynamics.com/download/#version=&apm=machine&os=linux) site into the current directory. 
+- Download StandAlone Machine agent from [AppDynamics Download Portal](https://download.appdynamics.com/download/#version=&apm=machine&os=linux) into the current directory. 
 
 ```
 (master)$ ls

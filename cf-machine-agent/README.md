@@ -42,6 +42,17 @@ applications:
 
 ```
 
+basically the diff being...
+
+```
+(master)$ git diff
+
+-    JAVA_OPTS: '-Dappdynamics.agent.accountAccessKey={} -Dappdynamics.agent.accountName={} -Dappdynamics.controller.hostName={} -Dappdynamics.controller.port={} -Dappdynamics.agent.applicationName={} -Dappdynamics.agent.tierName={} -Dappdynamics.agent.nodeName={} -Dappdynamics.controller.ssl.enabled={true|false}'
++    JAVA_OPTS: '-Dappdynamics.agent.accountAccessKey=accessKey -Dappdynamics.agent.accountName=customer1 -Dappdynamics.controller.hostName=saas-controller.e2e.appd.com -Dappdynamics.controller.port=8090 -Dappdynamics.agent.applicationName=app -Dappdynamics.agent.tierName=tier -Dappdynamics.agent.nodeName=node -Dappdynamics.controller.ssl.enabled=false'
+
+```
+
+
 
 - Run `package.sh` - this script packages extension zips into machine agent monitor folder and cleans machine agent and adjusts the permissions of files per requirements from cloudfoundry
 
@@ -90,7 +101,4 @@ Getting apps in org appdynamics-org / space appdynamics-space as admin...
 OK
 appdynamics-machine-agent   started           1/1         1G       1G
 ```
-
-
-
 

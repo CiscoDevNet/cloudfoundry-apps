@@ -3,4 +3,4 @@ applications:
 - name: appd-node-demo
   memory: 500M
   services:
-    - sonic-demo
+    - pcf-appd-instance

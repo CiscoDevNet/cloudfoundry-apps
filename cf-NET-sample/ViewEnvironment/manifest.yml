@@ -1,0 +1,8 @@
+---
+applications:
+- name: cf-net-application-sample
+  memory: 2G
+  buildpack: hwc_buildpack
+  stack: windows2016
+  env:
+    BP_DEBUG: true

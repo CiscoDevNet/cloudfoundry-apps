@@ -2,5 +2,6 @@
 applications:
 - name: appd-node-demo
   memory: 500M
+  random-route: true
   services:
     - pcf-appd-instance

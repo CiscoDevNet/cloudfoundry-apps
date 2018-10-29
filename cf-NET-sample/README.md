@@ -2,9 +2,34 @@
 This application is a modified version of Cloud Foundry's .NET (full framework) sample application. It has been modified to simply make an exit call to google.com each time the page is loaded.
 
 ## To use
-Follow the instructions for building and installing the [AppDynamics HWC buildpack](https://github.com/Appdynamics/hwc-buildpack). Then you can push this app from the ViewEnvironment directory:
+
+- Install AppDynamics APM tile for PCF v4.5.514 or higher
+- Create service instance of appdynamics service (say, appd_ssl) exposed by the tile 
+- cd ViewEnvironment
+- Edit the `manifest.yml` to bind to the above service instance and to use buildpacks `appdbuildpack` and `hwc_buildpack`
+
+
 ```
-cd ViewEnvironment
-cf push my_app_name -b [BUILDPACK_NAME] -s windows2012R2
+$ cat manifest.yml
+
+---
+applications:
+- name: cf-net-application-sample
+  memory: 2G
+  buildpacks: 
+    - appdbuildpack
+    - hwc_buildpack
+  stack: windows2016
+  env:
+    BP_DEBUG: true
+  services:
+    - appd_ssl
+
+
 ```
-where [BUILDPACK_NAME] is what you named the AppDynamics HWC buildpack you installed to your CloudFoundry environment.
+- Push the application 
+
+```
+cf push 
+```
+

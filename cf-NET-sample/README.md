@@ -4,6 +4,7 @@ This application is a modified version of Cloud Foundry's .NET (full framework) 
 ## Pre Requisites
 
 - cf CLI v6.38 or higher for using multi buildpack approach
+- hwc_buildpack v3.0 or higher
 
 ## To use
 
@@ -11,7 +12,7 @@ This application is a modified version of Cloud Foundry's .NET (full framework) 
 - Create service instance of appdynamics service (say, appd_ssl) exposed by the tile 
 
 - cd ViewEnvironment
-- Edit the `manifest.yml` to bind to the above service instance and to use buildpacks `appdbuildpack` and `hwc_buildpack`
+- Edit the `manifest.yml` to bind to the above service instance and to use buildpacks `appdbuildpack` and `hwc_buildpack` 
 
 
 ```

@@ -1,10 +1,15 @@
 # .NET Sample App
 This application is a modified version of Cloud Foundry's .NET (full framework) sample application. It has been modified to simply make an exit call to google.com each time the page is loaded.
 
+## Pre Requisites
+
+- cf CLI v6.38 or higher for using multi buildpack approach
+
 ## To use
 
-- Install AppDynamics APM tile for PCF v4.5.514 or higher
+- Install AppDynamics APM tile for PCF v4.5.514 or higher - This will install  `appdbuildpack` AppDynamics Extension Buildpack. 
 - Create service instance of appdynamics service (say, appd_ssl) exposed by the tile 
+
 - cd ViewEnvironment
 - Edit the `manifest.yml` to bind to the above service instance and to use buildpacks `appdbuildpack` and `hwc_buildpack`
 
@@ -31,5 +36,11 @@ applications:
 
 ```
 cf push 
+```
+
+or if you prefer to use buildpacks explicitly 
+
+```
+cf push <appname> -b appdbuildpack -b hwc_buildpack 
 ```
 

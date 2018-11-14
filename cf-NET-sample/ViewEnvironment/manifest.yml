@@ -6,5 +6,4 @@ applications:
     - appdbuildpack
     - hwc_buildpack
   stack: windows2016
-  env:
-    BP_DEBUG: true
+

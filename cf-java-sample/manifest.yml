@@ -3,7 +3,12 @@ applications:
 - name: spring-music
   memory: 1G
   random-route: true
-  buildpack: https://github.com/cloudfoundry/java-buildpack.git
   path: build/libs/cf-java-sample-1.0.jar
+  buildpacks:
+    - appd_buildpack
+    - https://github.com/pavankrish123/java-buildpack.git
+  env:
+    APPD_AGENT: java
+    BP_DEBUG: true
   services:
-    - appd443
+    - appd

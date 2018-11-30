@@ -4,11 +4,9 @@ Java Cloudfoundry Application Instrumentation using Appdynamics
 Pre-requisites
 --------------
 
-- Step 0: A jar file is needed
+- A jar file 
 
-```
-cloudfoundry-apps/cf-java-sample (master)$ ./gradlew build
-```
+- In our example here, we can compile the src by doing `./gradlew build` and it creates a jar file in `build/libs/cf-java-sample-1.0.jar`
 
 Steps
 ------
@@ -32,6 +30,7 @@ Steps
   appdynamics/conf/app-agent-config.xml
   appdynamics/conf/custom-interceptors.xml
   ```
+  
 - Step 2: Edit manifest.yml to use
    1. **buildpacks**:  `appdbuildpack` and `java_buildpack` 
    1. **appdynamics service instance**: `appd` in this example

@@ -28,7 +28,7 @@ cloudfoundry-apps/cf-java-sample (master)$ ./gradlew build
 - Step 3: Edit manifest.yml to use
    1. **buildpacks**:  `appdbuildpack` and `java_buildpack` 
    1. **appdynamics service instance**: `appd` in this example
-   1. **Environment Varibale** `APPD_AGENT: java`
+   1. **environment** `APPD_AGENT: java`
    
    ```
    ---

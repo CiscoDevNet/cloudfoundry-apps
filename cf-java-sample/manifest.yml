@@ -5,8 +5,8 @@ applications:
   random-route: true
   path: build/libs/cf-java-sample-1.0.jar
   buildpacks:
-    - appd_buildpack
-    - https://github.com/pavankrish123/java-buildpack.git
+    - appdbuildpack
+    - https://github.com/Appdynamics/java-buildpack.git
   env:
     APPD_AGENT: java
     BP_DEBUG: true

@@ -4,7 +4,8 @@ Java Cloudfoundry Application Instrumentation using Appdynamics
 Pre-requisites
 --------------
 
-- Step 0: Compile the source code to create the jar file 
+- Step 0: A jar file is needed
+
 ```
 cloudfoundry-apps/cf-java-sample (master)$ ./gradlew build
 ```

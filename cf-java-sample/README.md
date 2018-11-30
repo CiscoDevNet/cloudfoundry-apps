@@ -7,9 +7,9 @@ cloudfoundry-apps/cf-java-sample (master)$ ./gradlew build
 ```
 
 - Step 2: (optional) Add any advanced configuration . To do this 
-  1. create a folder `appdynamics/conf/` 
+  1. create a folder `appdynamics/conf` 
   
-  1. Drop the additional configuration files like `transactions.xml` or `logging\log4j.xml` in `appdynamics\conf`
+  1. Drop the additional configuration files like `transactions.xml` or `logging/log4j.xml` in `appdynamics/conf`
   
   1. add the folder to jar file  `jar -uf <jar-file> <folder>`
   ```

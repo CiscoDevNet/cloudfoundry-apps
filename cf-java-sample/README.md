@@ -1,12 +1,18 @@
 Java Cloudfoundry Application Instrumentation using Appdynamics
 ================================================================================
 
-- Step 1: Compile the source code to create the jar file 
+Pre-requisites
+--------------
+
+- Step 0: Compile the source code to create the jar file 
 ```
 cloudfoundry-apps/cf-java-sample (master)$ ./gradlew build
 ```
 
-- Step 2: (optional) Add any advanced configuration . To do this 
+Steps
+------
+
+- Step 1: (optional) Add any advanced configuration . To do this 
   1. create a folder `appdynamics/conf` 
   
   1. Drop the additional configuration files like `transactions.xml` or `logging/log4j.xml` in `appdynamics/conf`
@@ -25,7 +31,7 @@ cloudfoundry-apps/cf-java-sample (master)$ ./gradlew build
   appdynamics/conf/app-agent-config.xml
   appdynamics/conf/custom-interceptors.xml
   ```
-- Step 3: Edit manifest.yml to use
+- Step 2: Edit manifest.yml to use
    1. **buildpacks**:  `appdbuildpack` and `java_buildpack` 
    1. **appdynamics service instance**: `appd` in this example
    1. **environment** `APPD_AGENT: java`
@@ -46,7 +52,7 @@ cloudfoundry-apps/cf-java-sample (master)$ ./gradlew build
       - appd
    
    ```
-- Step 4: Push the application
+- Step 3: Push the application
 ```
 $ cf push
 ```

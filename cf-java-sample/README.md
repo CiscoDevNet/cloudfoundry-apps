@@ -5,7 +5,7 @@ Pre-requisites
 --------------
 
 - A jar file 
-
+- Install Appdynamics Application Performance Monitoring for PCF tile 
 - In our example here, we can compile the src by doing `./gradlew build` and it creates a jar file in `build/libs/cf-java-sample-1.0.jar`
 
 Steps

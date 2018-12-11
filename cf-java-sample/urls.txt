@@ -1,4 +1,4 @@
-URL=spring-music-brash-aligator.cfapps.pie-20.cfplatformeng.com
+URL=cf-java-app-active-serval.cfapps.pie-multi-az-blue.cfplatformeng.com
 http://$URL/
 http://$URL/service
 http://$URL/appinfo

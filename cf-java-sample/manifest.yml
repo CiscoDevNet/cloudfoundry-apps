@@ -1,14 +1,13 @@
 ---
 applications:
-- name: spring-music
+- name: cf-java-app
   memory: 1G
   random-route: true
   path: build/libs/cf-java-sample-1.0.jar
   buildpacks:
-    - appdbuildpack
+    - appd_buildpack
     - https://github.com/Appdynamics/java-buildpack.git
   env:
     APPD_AGENT: java
-    BP_DEBUG: true
   services:
-    - appd
+    - appdOther

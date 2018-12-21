@@ -2,6 +2,6 @@
 applications:
 - name: cf-python-appdynamics
   memory: 500M
-  buildpack: https://github.com/cloudfoundry/python-buildpack.git#develop
+  buildpack: https://github.com/pavankrish123/python-buildpack.git
   services:
-    - sonic
+    - appd

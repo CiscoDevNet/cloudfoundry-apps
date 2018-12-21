@@ -1,4 +1,4 @@
-URL=cf-java-app-active-serval.cfapps.pie-multi-az-blue.cfplatformeng.com
+URL=cf-java-app-bold-llama.cfapps.pie-multi-az-blue.cfplatformeng.com
 http://$URL/
 http://$URL/service
 http://$URL/appinfo

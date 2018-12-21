@@ -1,0 +1,13 @@
+---
+applications:
+- name: dotnetHelloWorld
+  random-route: true
+  memory: 512M
+  path: app.zip
+  command: dotnetHelloWorld.exe
+  stack: windows2016
+  buildpacks:
+    - binary_buildpack
+  env:
+    DOTNET_CLI_TELEMETRY_OPTOUT: 1
+    DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true

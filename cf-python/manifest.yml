@@ -1,7 +1,10 @@
 ---
 applications:
-- name: cf-python-appdynamics
+- name: cf-python
   memory: 500M
-  buildpack: https://github.com/pavankrish123/python-buildpack.git
-  services:
-    - appd
+  buildpacks: 
+    - multibp
+    - python_buildpack
+  env:
+    BP_DEBUG: true
+

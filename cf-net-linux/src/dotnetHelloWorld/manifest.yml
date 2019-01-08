@@ -7,7 +7,12 @@ applications:
   command: dotnetHelloWorld.exe
   stack: windows2016
   buildpacks:
+    - appd_buildpack
     - binary_buildpack
   env:
+    BP_DEBUG: true
+    APPD_AGENT: dotnetcore
     DOTNET_CLI_TELEMETRY_OPTOUT: 1
     DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
+  services:
+    - appd

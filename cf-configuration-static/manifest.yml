@@ -1,0 +1,6 @@
+---
+applications:
+- name: appd-configuration-server
+  memory: 2G
+  buildpacks:
+    - staticfile_buildpack # buildpack to start a static file server

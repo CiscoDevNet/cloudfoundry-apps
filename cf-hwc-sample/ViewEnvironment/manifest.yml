@@ -3,11 +3,11 @@ applications:
 - name: cf-net
   memory: 2G
   buildpacks: 
-    - appd_buildpack
+    - appdbuildpack
     - hwc_buildpack
   stack: windows2016
   env:
-    BP_DEBUG: tue
+    APPD_AGENT: dotnet 
     APPD_AGENT_HTTP_URL: https://www.nuget.org/api/v2/package/AppDynamics.Agent.Distrib.Micro.Windows/4.5.2
   services:
     - appd

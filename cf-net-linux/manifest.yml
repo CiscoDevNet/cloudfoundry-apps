@@ -1,8 +1,16 @@
 ---
 applications:
-- name: dotnetHelloWorld
+- name: cf-net-linux
   random-route: true
-  memory: 512M
+  memory: 1G
+  buildpacks:
+    - appdbuildpack
+    - dotnet_core_buildpack
   env:
+    APPD_AGENT: dotnetcore
+    APPD_AGENT_HTTP_URL: http://appd-configuration-server.apps.lawndale.cf-app.com/dotnetcore/1/AppDynamics-DotNetCore-linux-x64-4.5.7.0.zip
     DOTNET_CLI_TELEMETRY_OPTOUT: 1
     DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
+  services:
+    - appd
+  

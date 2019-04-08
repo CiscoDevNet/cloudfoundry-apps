@@ -11,5 +11,5 @@ applications:
     APPD_ANALYTICS_CONTROLLER: http://lab-cont-usw2.demo.appdynamics.com
     APPD_ANALYTICS_EVENT_ENDPOINT: http://lab-cont-usw2.demo.appdynamics.com:9080
     APPD_ANALYTICS_EVENT_NAME: cutsomer1
-    APPD_ANALYTICS_ACCESS_KEY: 60dbc1a8dedfed
-  
+    APPD_ANALYTICS_ACCESS_KEY: 60dbc1a8-043c-44f7-93f8-e18aeb0b8274
+    APPD_ANALYTICS_GLOBAL_ACCOUNT: customer1_d20c772d-bbe9-48b1-8435-e2fd89145784  

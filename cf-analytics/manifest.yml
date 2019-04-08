@@ -1,0 +1,15 @@
+---
+applications:
+- name: cf-analytics
+  memory: 2G
+  random-route: true
+  path: cf-analytics.zip
+  health_check: process
+  buildpacks:
+    - java_buildpack_offline
+  env:
+    APPD_ANALYTICS_CONTROLLER: <AppDynamics Controller eg: http://lab-cont-usw2.demo.appdynamics.com>
+    APPD_ANALYTICS_EVENT_ENDPOINT: < Analytics Event Service URL http://lab-cont-usw2.demo.appdynamics.com:9080> #
+    APPD_ANALYTICS_EVENT_NAME: <Account name eg: cutsomer1>
+    APPD_ANALYTICS_ACCESS_KEY: < Access Key eg: 60dbc1a8dedfed>
+  

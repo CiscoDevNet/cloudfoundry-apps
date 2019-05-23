@@ -11,10 +11,9 @@
   "dependencies": {
     "express": "~4.15.2",
     "logfmt": "~1.2.0",
-    "appdynamics": "latest",
     "cfenv": "latest"
   },
   "engines": {
-    "node": "~>6"
+    "node": "~>8"
   }
 }

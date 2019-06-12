@@ -1,8 +1,0 @@
--XX:+UseParallelGC
--XX:GCLogFileSize=64m
--XX:NumberOfGCLogFiles=4
--XX:+UseGCLogFileRotation
--agentpath:/home/vcap/app/.java-buildpack/open_jdk_jre/bin/jvmkill-1.16.0_RELEASE=printHeapHistogram=1
--Djava.io.tmpdir=$TMPDIR
--Djava.ext.dirs=/home/vcap/app/.java-buildpack/container_security_provider:/home/vcap/app/.java-buildpack/open_jdk_jre/lib/ext
--Djava.security.properties=/home/vcap/app/.java-buildpack/java_security/java.security

@@ -1,0 +1,15 @@
+---
+applications:
+- name: cf-analytics
+  memory: 2G
+  random-route: true
+  path: cf-analytics.zip
+  health-check-type: process
+  buildpacks:
+    - java_buildpack_offline
+  env:
+    APPD_ANALYTICS_CONTROLLER: <controller url>
+    APPD_ANALYTICS_EVENT_ENDPOINT: <event service url>
+    APPD_ANALYTICS_EVENT_NAME: <account>
+    APPD_ANALYTICS_ACCESS_KEY: <key>
+    APPD_ANALYTICS_GLOBAL_ACCOUNT: <global account>  

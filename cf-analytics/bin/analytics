@@ -1,2 +1,0 @@
-cd $PWD/analytics-agent/scripts
-./analytics-agent.sh start

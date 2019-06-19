@@ -7,5 +7,6 @@ applications:
     - https://github.com/cloudfoundry/nodejs-buildpack
   env:
     APPD_AGENT: nodejs
+    APPD_BUILDPACK: true
   services:
     - pcf-appd-instance

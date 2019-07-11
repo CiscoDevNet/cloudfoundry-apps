@@ -7,7 +7,7 @@ applications:
   buildpacks:
     - https://github.com/AppDynamics/java-buildpack
   services:
-    - text
+    - secret
   env:
     APPDYNAMICS_AGENT_APPLICATION_NAME: test-space:pcf-spring-app
     APPDYNAMICS_AGENT_TIER_NAME: tier-1
@@ -19,7 +19,7 @@ applications:
   buildpacks:
     - https://github.com/AppDynamics/java-buildpack
   services:
-    - secret
+    - text
   env:
     APPDYNAMICS_AGENT_APPLICATION_NAME: test-space:pcf-spring-app
     APPDYNAMICS_AGENT_TIER_NAME: tier-2

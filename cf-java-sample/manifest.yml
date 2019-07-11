@@ -1,8 +1,39 @@
 ---
 applications:
-- name: cf-java-app
+- name: cf-java-app-1
   memory: 1G
   random-route: true
   path: build/libs/cf-java-sample-1.0.jar
   buildpacks:
-    - java_buildpack
+    - https://github.com/AppDynamics/java-buildpack
+  services:
+    - text
+  env:
+    APPDYNAMICS_AGENT_APPLICATION_NAME: test-space:pcf-spring-app
+    APPDYNAMICS_AGENT_TIER_NAME: tier-1
+    APPD_TAG_BLUE_GREEN: blue
+- name: cf-java-app-2
+  memory: 1G
+  random-route: true
+  path: build/libs/cf-java-sample-1.0.jar
+  buildpacks:
+    - https://github.com/AppDynamics/java-buildpack
+  services:
+    - secret
+  env:
+    APPDYNAMICS_AGENT_APPLICATION_NAME: test-space:pcf-spring-app
+    APPDYNAMICS_AGENT_TIER_NAME: tier-2
+    APPD_TAG_BLUE_GREEN: green
+applications:
+- name: cf-java-app-3
+  memory: 1G
+  random-route: true
+  path: build/libs/cf-java-sample-1.0.jar
+  buildpacks:
+    - https://github.com/AppDynamics/java-buildpack
+  services:
+    - text
+  env:
+    APPDYNAMICS_AGENT_APPLICATION_NAME: test-space:pcf-spring-app
+    APPDYNAMICS_AGENT_TIER_NAME: tier-3
+    APPD_TAG_BLUE_GREEN: blue

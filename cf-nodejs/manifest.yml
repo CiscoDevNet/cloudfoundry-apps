@@ -3,8 +3,8 @@ applications:
 - name: appd-node-demo
   memory: 500M
   buildpacks:
-    - dev_appd_buildpack
-    - https://github.com/cloudfoundry/nodejs-buildpack
+    - appdbuildpack
+    - nodejs_buildpack
   env:
     APPD_AGENT: nodejs
   services:

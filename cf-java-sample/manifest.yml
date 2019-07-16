@@ -5,7 +5,7 @@ applications:
   random-route: true
   path: build/libs/cf-java-sample-1.0.jar
   buildpacks:
-    - https://github.com/AppDynamics/java-buildpack
+    - https://github.com/cloudfoundry/java-buildpack
   services:
     - secret
   env:
@@ -17,7 +17,7 @@ applications:
   random-route: true
   path: build/libs/cf-java-sample-1.0.jar
   buildpacks:
-    - https://github.com/AppDynamics/java-buildpack
+    - https://github.com/cloudfoundry/java-buildpack
   services:
     - text
   env:
@@ -30,7 +30,7 @@ applications:
   random-route: true
   path: build/libs/cf-java-sample-1.0.jar
   buildpacks:
-    - https://github.com/AppDynamics/java-buildpack
+    - https://github.com/cloudfoundry/java-buildpack
   services:
     - text
   env:

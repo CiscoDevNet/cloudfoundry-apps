@@ -4,10 +4,13 @@ applications:
   random-route: true
   memory: 1G
   buildpacks:
-    - appd_buildpack
+    - dev_appd_buildpack
     - dotnet_core_buildpack
+  services:
+    - pcf-appd-instance
   env:
     APPD_AGENT: dotnetcore
-    APPD_AGENT_HTTP_URL: http://appd-configuration-server.cfapps.pie-multi-az-blue.cfplatformeng.com/dotnetcore/1/AppDynamics-DotNetCore-linux-x64-4.5.7.0.zip
+    APPD_CONF_HTTP_URL: http://appd-configuration-server.apps.rome.cf-app.com/v1/
+    APPD_AGENT_HTTP_URL: http://appd-configuration-server.apps.rome.cf-app.com/downloads/AppDynamics-DotNetCore-linux-x64-4.5.16.0.zip
     DOTNET_CLI_TELEMETRY_OPTOUT: 1
     DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true

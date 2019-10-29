@@ -1,8 +1,8 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
-    <VersionPrefix>2.0</VersionPrefix>
-    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <VersionPrefix>2.1</VersionPrefix>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
     <DebugType>portable</DebugType>
     <PreserveCompilationContext>true</PreserveCompilationContext>
     <AssemblyName>dotnetHelloWorld</AssemblyName>

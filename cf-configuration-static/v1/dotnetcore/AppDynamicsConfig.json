@@ -1,31 +1,7 @@
 {
-  "controller": {
-    "host": "controller.saas.appdynamics.com",
-    "port": 443,
-    "account": "account-name",
-    "password": "access-key",
-    "ssl": true
-    "proxy" : {
-        "host": "proxy-host",
-        "port": 9090,
-           "authentication": {
-              "username": "proxy-user",
-              "password": "proxy-password"
-         }
-      }
-  },
-  "application": {
-    "name": "My Application",
-    "tier": "Sample tier",
-    "node": "Instance1",
-    "reusenodename": "true",
-    "nodenameprefix": "prefix"
-  },
-  "analytics": {
-    "host": "localhost",
-    "port": 9090
-  },
-  "feature": [
-    "FULL_AGENT"
+ "log": [
+    {
+      "outputtype": "console"
+    }
   ]
 }

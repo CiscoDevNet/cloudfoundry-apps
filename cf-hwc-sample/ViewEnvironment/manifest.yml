@@ -3,7 +3,7 @@ applications:
 - name: cf-net
   memory: 2G
   buildpacks: 
-    - appdbuildpack
+    - dev_appd_buildpack
     - hwc_buildpack
   stack: windows2016
   env:

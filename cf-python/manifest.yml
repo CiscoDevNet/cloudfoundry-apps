@@ -3,8 +3,10 @@ applications:
 - name: cf-python
   memory: 500M
   buildpacks: 
-    - multibp
+    - dev_appd_buildpack
     - python_buildpack
+  services:
+    - pcf-appd-instance
   env:
     BP_DEBUG: true
 

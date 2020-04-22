@@ -1,0 +1,10 @@
+{
+  "feature": [
+    "FULL_AGENT"
+  ],
+  "log": [
+    {
+      "outputtype": "console"
+    }
+  ]
+}

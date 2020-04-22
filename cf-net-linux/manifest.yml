@@ -1,16 +1,19 @@
 ---
 applications:
-- name: cf-net-linux-ups
+- name: cf-net-linux-appd
   random-route: true
   memory: 1G
   buildpacks:
-    - dev_appd_buildpack
+    - appdbuildpack
     - dotnet_core_buildpack
-  services:
-    - appd
   env:
-    APPD_AGENT: dotnetcore
-    APPD_AGENT_HTTP_URL: http://appd-configuration-server.apps.rome.cf-app.com/downloads/AppDynamics-DotNetCore-linux-x64-4.5.16.0.zip
-    APPD_CONF_HTTP_URL: http://appd-configuration-server.apps.pcf.demo.appdynamics.com/v1/
-    DOTNET_CLI_TELEMETRY_OPTOUT: 1
-    DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
+    APPD_AGENT: dotnet-linux
+    APPDYNAMICS_AGENT_APPLICATION_NAME: my-dotnet-linux-app
+    APPDYNAMICS_AGENT_TIER_NAME: cf-net-linux
+    # Agent and conf urls are required
+    # Simplest option is to use cf-configuration-static app to publish agent and config file
+    APPD_AGENT_HTTP_URL: http://<cf-configuration-static-route>/dotnet-linux/AppDynamics-DotNetCore-linux-x64-20.3.0.zip
+    APPD_CONF_HTTP_URL: http://<cf-configuration-static-route>
+    BP_DEBUG: false
+  services:
+    - pcf-appd-instance

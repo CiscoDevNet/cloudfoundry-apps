@@ -5,8 +5,6 @@
  It reads the agent configuration informartion from the Appdynamics marketplace service
  and environment variables specified in manifest.yml
  Controller configuration is read through the service.
- If defined Application name, tier name, node name, debug mode, proxy/proxyless mode
- and logging information is read through environment variables.
  Read through this documentation to setup the agent:
  https://docs.pivotal.io/partners/appdynamics/using.html#node_workflow
 */

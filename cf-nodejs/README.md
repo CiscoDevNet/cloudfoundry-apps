@@ -57,7 +57,7 @@ Just add
     - nodejs_buildpack
 ```
 
-- Set the AppDynamics environment variables for the Node.js agent
+- Edit manifest.yml to set the AppDynamics environment variables for the Node.js agent
 
 ```
     APPD_AGENT: nodejs

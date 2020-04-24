@@ -49,35 +49,20 @@ Just add
     - pcf-appd-instance
 ```
 
-- Edit your application and  paste the following in your application at the beginning of your application source code, before any other require statement:
-
-
-```
-var cfEnv = require('cfenv');
-var appEnv = cfEnv.getAppEnv();
-var appdService = appEnv.getServiceCreds('pcf-appd-instance');
-var appdynamics = require("appdynamics").profile({
-    controllerHostName: appdService['host-name'],
-    controllerPort: appdService['port'],
-    controllerSslEnabled: appdService['ssl-enabled'],
-    accountName: appdService['account-name'],
-    accountAccessKey: appdService['account-access-key'],
-    nodeName: `${appEnv.name}.${process.env.CF_INSTANCE_INDEX}`,
-    libagent: true
-});
-```
-
-- Add appdynamics package in the list of dependencies specified in your package.json
+- Edit manifest.yml to include the appdbuildpack before the nodejs_buildpack
 
 ```
-  ....
-  "dependencies": {
-    "express": "~4.15.2",
-    "logfmt": "~1.2.0",
-    "appdynamics": "latest",
-    "cfenv": "latest"
-  },
-  ...
+  buildpacks:
+    - appdbuildpack
+    - nodejs_buildpack
+```
+
+- Set the AppDynamics environment variables for the Node.js agent
+
+```
+    APPD_AGENT: nodejs
+    APPDYNAMICS_AGENT_APPLICATION_NAME: my-nodejs-app
+    APPDYNAMICS_AGENT_TIER_NAME: cf-nodejs
 ```
 
 - Push the application using `cf push`

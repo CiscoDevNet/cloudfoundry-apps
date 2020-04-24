@@ -1,11 +1,15 @@
 ---
 applications:
-- name: appd-node-demo
+- name: cf-nodejs-appd
   memory: 500M
   buildpacks:
-    - dev_appd_buildpack
-    - https://github.com/Appdynamics/nodejs-buildpack
+    - appdbuildpack
+    - nodejs_buildpack
+  stack: cflinuxfs3
   env:
+    APPDYNAMICS_LOGGER_OUTPUT_TYPE: console
     APPD_AGENT: nodejs
+    APPDYNAMICS_AGENT_APPLICATION_NAME: my-nodejs-app
+    APPDYNAMICS_AGENT_TIER_NAME: appd-node-demo
   services:
     - pcf-appd-instance

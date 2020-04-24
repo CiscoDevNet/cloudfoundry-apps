@@ -10,6 +10,6 @@ applications:
     APPDYNAMICS_LOGGER_OUTPUT_TYPE: console
     APPD_AGENT: nodejs
     APPDYNAMICS_AGENT_APPLICATION_NAME: my-nodejs-app
-    APPDYNAMICS_AGENT_TIER_NAME: appd-node-demo
+    APPDYNAMICS_AGENT_TIER_NAME: cf-nodejs
   services:
     - pcf-appd-instance

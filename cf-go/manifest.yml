@@ -1,14 +1,16 @@
 ---
 applications:
-  - name: cf-go
+  - name: cf-go-appd
     buildpacks:
-    - appd_buildpack
-    - https://github.com/cloudfoundry/go-buildpack.git
+    - appdbuildpack
+    - go_buildpack
     env:
-      GOVERSION: go1.8
+      APPD_APPLICATION_NAME: my-go-app
+      APPD_TIER_NAME: go-tier
+      APPD_AGENT: golang
       LD_LIBRARY_PATH: /app/vendor/appdynamics/lib
     services:
-      - appd    
+      - pcf-appd-instance  
 
       
 

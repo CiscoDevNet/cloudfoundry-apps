@@ -7,4 +7,4 @@ applications:
   buildpack: java_buildpack_offline
   path: MachineAgent.zip
   env:
-    JAVA_OPTS: '-Dappdynamics.agent.accountAccessKey={} -Dappdynamics.agent.accountName={} -Dappdynamics.controller.hostName={} -Dappdynamics.controller.port={} -Dappdynamics.agent.applicationName={} -Dappdynamics.agent.tierName={} -Dappdynamics.agent.nodeName={} -Dappdynamics.controller.ssl.enabled={true|false}'
+    JAVA_OPTS: '-Dappdynamics.agent.accountAccessKey={} -Dappdynamics.agent.accountName={} -Dappdynamics.controller.hostName={} -Dappdynamics.controller.port={} -Dappdynamics.agent.applicationName={} -Dappdynamics.agent.uniqueHostId={} -Dappdynamics.controller.ssl.enabled={true|false}'

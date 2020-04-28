@@ -1,13 +1,16 @@
 ---
 applications:
-- name: cf-net
+- name: cf-net-appd
   memory: 2G
   buildpacks: 
-    - dev_appd_buildpack
+    - appdbuildpack
     - hwc_buildpack
   stack: windows2016
   env:
     APPD_AGENT: dotnet 
-    APPD_AGENT_HTTP_URL: https://www.nuget.org/api/v2/package/AppDynamics.Agent.Distrib.Micro.Windows/4.5.2
+    APPDYNAMICS_AGENT_APPLICATION_NAME: my-cf-net-app
+    APPDYNAMICS_AGENT_TIER_NAME: cf-net-app
+    # replace with internal repo where downloaded agent is hosted
+    APPD_AGENT_HTTP_URL: https://www.nuget.org/api/v2/package/AppDynamics.Agent.Distrib.Micro.Windows/20.4.0
   services:
-    - appd
+    - pcf-appd-instance

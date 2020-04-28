@@ -1,12 +1,16 @@
 ---
 applications:
-- name: cf-python
+- name: cf-python-appd
   memory: 500M
   buildpacks: 
-    - dev_appd_buildpack
+    - appdbuildpack
     - python_buildpack
+  env:
+    APPD_AGENT: python
+    APPD_APP_NAME: my-python-app
+    APPD_TIER_NAME: cf-python
+    APPD_CONTROLLER_SSL_CERTFILE: /etc/ssl/certs/ca-certificates.crt
   services:
     - pcf-appd-instance
-  env:
-    BP_DEBUG: true
+
 

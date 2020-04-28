@@ -4,17 +4,17 @@ Sample Python Cloudfoundry Application
 Pre-Requisites.
 ================================================================================
 
-- CloudFoundry Environment with Appdynamics Tile installed and configured with controller(s) information.
+- CloudFoundry Environment with Appdynamics Tile installed and configured with controller(s) information and latest AppDynamics buildpack
 - Sample Application. 
 
 
 To Use
 ================================================================================
 
-- Make sure appdynamics service is available by doing `cf markerplace` command 
+- Make sure appdynamics service is available by doing `cf marketplace` command 
 
 ```
-pavan.krishna@OSXLTPKrishna:~/pcf-dash-generator$ cf marketplace
+$ cf marketplace
 Getting services from marketplace in org appdynamics-org / space dev as admin...
 OK
 
@@ -31,34 +31,51 @@ Creating service instance appd443 in org appdynamics-org / space dev as admin...
 OK
 ```
 
-Note that if we already have an instance for the plan of our choice, we donot have to create another one, we can reuse the same instance across multiple applications. 
+Note that if we already have an instance for the plan of our choice, we do not have to create another one, we can reuse the same instance across multiple applications. 
 
 ```
-pavan.krishna@OSXLTPKrishna:~/pcf-dash-generator$ cf services
+$ cf services
 Getting services in org appdynamics-org / space dev as admin...
 
 name      service       plan            bound apps              last operation
 appd443   appdynamics   443Controller                          create succeeded
 ```
-
-
-
 - Edit manifest.yml to include the service instance we created so that the application binds to the instance. 
-Just add
 
 ```
   services:
     - appd443
 ```
 
-so `manifest.yml` will look like
+- Specify the AppDynamics buildpack before the python buildpack
+```
+  buildpacks: 
+    - appdbuildpack
+    - python_buildpack
+```
+- Add the environments variables to set the agent type, app name and tier name
+
+```
+  env:
+    APPD_AGENT: python
+    APPD_APP_NAME: my-python-app
+    APPD_TIER_NAME: cf-python
+```
+
+The `manifest.yml` will look like this:
 
 ```
 ---
 applications:
-- name: cf-python-appdynamics
+- name: cf-python-appd
   memory: 500M
-  buildpack: https://github.com/cloudfoundry/python-buildpack.git#develop
+  buildpacks: 
+    - appdbuildpack
+    - python_buildpack
+  env:
+    APPD_AGENT: python
+    APPD_APP_NAME: my-python-app
+    APPD_TIER_NAME: cf-python
   services:
     - appd443
 ```
@@ -67,7 +84,7 @@ applications:
 - Push the application using `cf push`
 
 ```
-pavan.krishna@OSXLTPKrishna:~/pcf-dash-generator$ cf push 
+$ cf push 
 ```
 
 Once it is pushed, you can generate the traffic and you will notice the application getting instrumented on Appdynamics Controller.  

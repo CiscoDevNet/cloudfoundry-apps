@@ -5,54 +5,36 @@ Pre-requisites
 --------------
 
 - A jar file 
-- Install Appdynamics Application Performance Monitoring for PCF tile 
+- Install Appdynamics Application Performance Monitoring for PCF tile and add a controller configuration
 - In our example here, we can compile the src by doing `./gradlew build` and it creates a jar file in `build/libs/cf-java-sample-1.0.jar`
 
 Steps
 ------
 
-- Step 1: (optional) Add any advanced configuration . To do this 
-  1. create a folder `appdynamics/conf` 
+
   
-  1. Drop the additional configuration files like `transactions.xml` or `logging/log4j.xml` in `appdynamics/conf`
-  
-  1. add the folder to jar file  `jar -uf <jar-file> <folder>`
-  ```
-  $jar -uf build/libs/cf-java-sample-1.0.jar appdynamics
-  ```
-  1. verify that the folder is present 
-  
-  ```
-  $jar -tf build/libs/cf-java-sample-1.0.jar | grep appdynamics
-  appdynamics/
-  appdynamics/conf/
-  appdynamics/conf/transactions.xml
-  appdynamics/conf/app-agent-config.xml
-  appdynamics/conf/custom-interceptors.xml
-  ```
-  
-- Step 2: Edit manifest.yml to use
-   1. **buildpacks**:  `appdbuildpack` and `java_buildpack` 
+- Edit manifest.yml to use
+
    1. **appdynamics service instance**: `appd` in this example
-   1. **environment** `APPD_AGENT: java`
+   1. **environment** AppDynamics app and tier names
    
    ```
    ---
   applications:
-  - name: spring-music
+  - name: cf-java-appd
     memory: 1G
     random-route: true
     path: build/libs/cf-java-sample-1.0.jar
     buildpacks:
-      - appdbuildpack
-      - https://github.com/Appdynamics/java-buildpack.git
+      - java_buildpack_offline
     env:
-      APPD_AGENT: java
+      APPDYNAMICS_AGENT_APPLICATION_NAME: my-java-app
+      APPDYNAMICS_AGENT_TIER_NAME: cf-java-app
     services:
       - appd
    
    ```
-- Step 3: Push the application
+- Push the application
 ```
 $ cf push
 ```

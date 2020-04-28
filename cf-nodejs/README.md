@@ -1,10 +1,10 @@
-Sample Nodejs Cloud Foundry Application Instrumentation.
+Sample Node.js Cloud Foundry Application Instrumentation.
 ================================================================================
 
-Pre-Requisites.
+Pre-Requisites
 ================================================================================
 
-- Cloud Foundry Environment with AppDynamics Application Monitoring for PCF  Tile installed and configured with controller(s) information.
+- CloudFoundry Environment with Appdynamics Tile installed and configured with controller(s) information and latest AppDynamics buildpack.
 - Sample Application. 
 
 
@@ -42,14 +42,11 @@ pcf-appd-instance    appdynamics   45Controller   appd-node-demo, node-cf-appd  
 
 
 - Edit manifest.yml to include the service instance we created so that the application binds to the instance. 
-Just add
-
 ```
   services:
     - pcf-appd-instance
 ```
-
-- Edit manifest.yml to include the appdbuildpack before the nodejs_buildpack
+- Edit manifest.yml to include the AppDynamics buildpack before the Node.js buildpack
 
 ```
   buildpacks:

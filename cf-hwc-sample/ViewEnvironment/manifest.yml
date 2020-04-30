@@ -10,7 +10,7 @@ applications:
     APPD_AGENT: dotnet 
     APPDYNAMICS_AGENT_APPLICATION_NAME: my-cf-net-app
     APPDYNAMICS_AGENT_TIER_NAME: cf-net-app
-    # replace with internal repo where downloaded agent is hosted
+    # Optional: the agent can be included in app via nuget as well
     APPD_AGENT_HTTP_URL: https://www.nuget.org/api/v2/package/AppDynamics.Agent.Distrib.Micro.Windows/20.4.0
   services:
     - pcf-appd-instance

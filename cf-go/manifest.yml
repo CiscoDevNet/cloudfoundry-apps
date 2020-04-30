@@ -5,9 +5,9 @@ applications:
     - appdbuildpack
     - go_buildpack
     env:
+      APPD_AGENT: golang
       APPD_APPLICATION_NAME: my-go-app
       APPD_TIER_NAME: go-tier
-      APPD_AGENT: golang
       LD_LIBRARY_PATH: /app/vendor/appdynamics/lib
     services:
       - pcf-appd-instance  

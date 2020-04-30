@@ -14,6 +14,5 @@ applications:
     # Simplest option is to use cf-configuration-static app to publish agent and config file
     APPD_AGENT_HTTP_URL: http://<cf-configuration-static-route>/dotnet-linux/AppDynamics-DotNetCore-linux-x64-20.3.0.zip
     APPD_CONF_HTTP_URL: http://<cf-configuration-static-route>
-    BP_DEBUG: false
   services:
     - pcf-appd-instance

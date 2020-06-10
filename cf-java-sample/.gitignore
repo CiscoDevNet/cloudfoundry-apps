@@ -15,7 +15,11 @@ local.properties
 target/
 
 .gradle
-build/
+/build/classes
+/build/reports
+/build/resources
+/build/test-results
+/build/tmp
 
 *.log*
 /classes/

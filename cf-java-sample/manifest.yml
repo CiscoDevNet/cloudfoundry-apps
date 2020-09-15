@@ -8,9 +8,12 @@ applications:
     - java_buildpack_offline
   stack: cflinuxfs3
   env:
-    APPDYNAMICS_AGENT_APPLICATION_NAME: my-java-app
+    APPDYNAMICS_AGENT_APPLICATION_NAME: jah-app
     APPDYNAMICS_AGENT_TIER_NAME: cf-java-app
     # Optionally set prefix that's prepended to the node name
     #APPD_CF_NODE_PREFIX: my-prefix
+    # Optionally set URL where configuration files are hosted to override defaults such as the log4j settings 
+    # See the cf-configuration-static app for an example log4j2.xml file that redirects agent logging to STDOUT
+    #APPD_CONF_HTTP_URL: http://<cf-configuration-static-route>
   services:
     - pcf-appd-instance

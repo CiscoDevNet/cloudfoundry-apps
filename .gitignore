@@ -1,1 +1,3 @@
 cf-analytics/manifest.yml
+cf-hwc-sample/ViewEnvironment/bin/ViewEnvironment.dll.config
+cf-hwc-sample/ViewEnvironment/Web.config
